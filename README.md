@@ -1,2 +1,3 @@
-# JonathanBinot_14_16062022
- Final project (14) of the Frontend course of OpenClassrooms
+# HRnet
+Welcome to HRnet! This is our company's internal application to create and view employee records.
+
