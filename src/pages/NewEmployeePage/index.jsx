@@ -1,27 +1,32 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
-import logo from "../../logo.svg";
+import HRnetLogo from "../../assets/images/hrnet-logo.svg";
+import Footer from "../../components/Footer";
 import "./index.css";
 
 import NewEmployeeForm from "../../components/NewEmployeeForm";
 
 function NewEmployeePage() {
+  const [showModal, useShowModal] = useState(false);
+
   return (
     <div className="App">
       <div className="title">
-        <h1>HRnet</h1>
+        <img className="logo" src={HRnetLogo} alt="" />
       </div>
       <div className="container">
         <Link to="/employee-list">View Current Employees</Link>
         <h2>Create Employee</h2>
 
         <NewEmployeeForm />
-
-        <button onclick="saveEmployee()">Save</button>
       </div>
-      <div id="confirmation" className="modal">
-        Employee Created!
-      </div>
+      {showModal && (
+        <div id="confirmation" className="modal">
+          Employee Created!
+        </div>
+      )}
+      <Footer />
     </div>
   );
 }
