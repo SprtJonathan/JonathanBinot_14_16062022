@@ -4,7 +4,7 @@ body {
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url(./assets/images/LowPolyBackgroundGreyWhite.png);
+  background-image: url(./assets/images/LowPolyBackgroundWhite.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -36,6 +36,25 @@ code {
   background: rgba(30, 30, 40, 1);
 }
 
+.logo {
+  max-height: 150px;
+}
+
+.title,
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 30px;
+  margin: 10px auto;
+  width: 70%;
+  height: auto;
+  /*background: rgba(15, 15, 15, 0.1);*/
+  backdrop-filter: blur(5px);
+  padding: 1rem 3rem;
+  border-radius: 10px;
+}
+
 .button-container {
   display: flex;
   justify-content: space-around;
@@ -43,16 +62,20 @@ code {
 }
 
 .submit-button {
-  background: #00bcd4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  background: #0080ff;
   color: #fff;
   min-width: 150px;
   max-width: 30%;
   height: 3rem;
+  border: 0px transparent;
   border-radius: 10px;
-  border: 1px solid #ccc;
-  background: #61DBFB;
-  color: #fff;
   font-size: 1.2rem;
   cursor: pointer;
   margin-top: 10px;
+  text-align: center;
+  text-decoration: none;
 }

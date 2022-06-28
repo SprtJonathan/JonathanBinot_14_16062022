@@ -2,6 +2,8 @@ import { React, useState } from "react";
 import Select from "react-select";
 import DatePicker from "react-datepicker";
 
+import Modal from "../../components/Modal/";
+
 import "react-datepicker/dist/react-datepicker.css";
 
 // CSS Modules, react-datepicker-cssmodules.css
@@ -273,9 +275,12 @@ function NewEmployeeForm() {
   const [deptSelection, setDeptSelection] = useState(null);
   const [dateOfBirthField, setDateOfBirthField] = useState(new Date());
   const [startDateField, setStartDateField] = useState(new Date());
+  const [displayModal, setDisplayModal] = useState(false);
 
   const saveEmployee = (e) => {
     e.preventDefault();
+
+    setDisplayModal(true);
 
     const firstName = document.getElementById("first-name");
     const lastName = document.getElementById("last-name");
@@ -372,6 +377,7 @@ function NewEmployeeForm() {
         <button onClick={saveEmployee} className="submit-button">
           Save
         </button>
+        <Modal title="Employee Created!" show={displayModal} />
       </div>
     </form>
   );

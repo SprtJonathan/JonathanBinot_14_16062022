@@ -6,14 +6,19 @@ import NewEmployeePage from "./pages/NewEmployeePage/";
 import EmployeeList from "./pages/EmployeeList/";
 import reportWebVitals from "./reportWebVitals";
 
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
+      <Header />
       <Routes>
         <Route path="/" element={<NewEmployeePage />} />
         <Route path="/employee-list" element={<EmployeeList />} />
       </Routes>
+      <Footer />
     </Router>
   </React.StrictMode>
 );
