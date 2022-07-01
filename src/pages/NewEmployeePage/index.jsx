@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import Select from "react-select";
 import DatePicker from "react-datepicker";
 
-import Modal from "../../components/Modal/";
+// import Modal from "../../components/Modal/";
+import Modal from "react-modal-component-hrnet";
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -281,10 +282,6 @@ function NewEmployeePage() {
   const [displayModal, setDisplayModal] = useState(false);
 
   const form = document.getElementById("create-employee");
-
-  useEffect(() => {
-    console.log("useEffect " + displayModal);
-  }, [displayModal]);
 
   const saveEmployee = (e) => {
     e.preventDefault();
