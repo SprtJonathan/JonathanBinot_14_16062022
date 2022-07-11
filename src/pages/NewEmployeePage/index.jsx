@@ -275,13 +275,13 @@ function NewEmployeePage() {
     },
   ];
 
-  const [stateSelection, setStateSelection] = useState(null);
-  const [deptSelection, setDeptSelection] = useState(null);
+  const [stateSelection, setStateSelection] = useState(states[0].value);
+  const [deptSelection, setDeptSelection] = useState(departments[0].value);
   const [dateOfBirthField, setDateOfBirthField] = useState(new Date());
   const [startDateField, setStartDateField] = useState(new Date());
   const [displayModal, setDisplayModal] = useState(false);
 
-  const form = document.getElementById("create-employee");
+  //const form = document.getElementById("create-employee");
 
   const saveEmployee = (e) => {
     e.preventDefault();
@@ -314,7 +314,7 @@ function NewEmployeePage() {
     employees.push(employee);
     localStorage.setItem("employees", JSON.stringify(employees));
 
-    form.reset();
+    //form.reset();
   };
 
   const changeStateSelection = (e) => {
@@ -331,7 +331,6 @@ function NewEmployeePage() {
         <Link to="/employee-list" className="submit-button">
           View Current Employees
         </Link>
-        <h2>employé{displayModal}</h2>
         {/* <NewEmployeeForm /> */}
 
         <form
@@ -376,7 +375,7 @@ function NewEmployeePage() {
               className="dropdown"
               options={states}
               onChange={changeStateSelection}
-              defaultValue={states[0].label}
+              defaultValue={states[0]}
             />
 
             <label htmlFor="zip-code">Zip Code</label>
@@ -390,6 +389,7 @@ function NewEmployeePage() {
             className="dropdown"
             options={departments}
             onChange={changeDeptSelection}
+            defaultValue={departments[0]}
           />
           <div className="button-container">
             <button className="submit-button">Save</button>
@@ -400,6 +400,7 @@ function NewEmployeePage() {
       {/* The available props are 
       "title" for the modal header, 
       "body" for the modal body 
+      "closeButton" for the modal close button (can be a "X" or any other text you want) 
       "showModal" for the state used to display the modal,*
       "titleColor" for the title color, 
       "headerBackgroundColor" for the header background color 
@@ -409,6 +410,7 @@ function NewEmployeePage() {
         <Modal
           title="Employee Created!"
           body="New employee created, you may now proceed to the employees list page"
+          closeButton="X"
           showModal={setDisplayModal}
         />
       )}
