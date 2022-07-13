@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import DataTable from "react-data-table-component-with-filter";
+
+import { useSelector } from "react-redux";
+
+import DataTable from "react-data-table-component";
 
 import "../NewEmployeePage/index.css";
 
@@ -53,16 +56,15 @@ const columns = [
 ];
 
 function EmployeesList() {
-  const [employees, setEmployees] = useState([]);
+  const employees = useSelector((state) => state.usersList.value);
   const [employeesFiltered, setEmployeesFiltered] = useState([]);
 
   //  console.log(JSON.parse(localStorage.getItem("employees")));
   useEffect(() => {
-    if (JSON.parse(localStorage.getItem("employees")) !== null) {
-      setEmployees(JSON.parse(localStorage.getItem("employees")));
-      setEmployeesFiltered(JSON.parse(localStorage.getItem("employees")));
+    if (employees !== null) {
+      setEmployeesFiltered(employees);
     }
-  }, [setEmployees, setEmployeesFiltered]);
+  }, [employees, setEmployeesFiltered]);
 
   const resetStore = () => {
     localStorage.removeItem("employees");

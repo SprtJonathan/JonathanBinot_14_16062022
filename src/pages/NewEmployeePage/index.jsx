@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { storeUser } from "../../redux/reducers/storedUsers";
 
 import Select from "react-select";
 import DatePicker from "react-datepicker";
@@ -14,6 +16,8 @@ import "./index.css";
 // import NewEmployeeForm from "../../components/NewEmployeeForm";
 
 function NewEmployeePage() {
+  const dispatch = useDispatch();
+
   const states = [
     {
       label: "Alabama",
@@ -281,14 +285,14 @@ function NewEmployeePage() {
   const [startDateField, setStartDateField] = useState(new Date());
   const [displayModal, setDisplayModal] = useState(false);
 
+  const [employees, setEmployees] = useState(
+    useSelector((state) => state.usersList.value)
+  ); //JSON.parse(localStorage.getItem("employees")) || [];
+
   //const form = document.getElementById("create-employee");
 
   const saveEmployee = (e) => {
     e.preventDefault();
-
-    setDisplayModal(true);
-
-    console.log("formulaire " + displayModal);
 
     const firstName = document.getElementById("first-name");
     const lastName = document.getElementById("last-name");
@@ -298,7 +302,6 @@ function NewEmployeePage() {
     const city = document.getElementById("city");
     const zipCode = document.getElementById("zip-code");
 
-    const employees = JSON.parse(localStorage.getItem("employees")) || [];
     const employee = {
       firstName: firstName.value,
       lastName: lastName.value,
@@ -310,9 +313,12 @@ function NewEmployeePage() {
       state: stateSelection,
       zipCode: zipCode.value,
     };
-    console.log(employee);
-    employees.push(employee);
-    localStorage.setItem("employees", JSON.stringify(employees));
+    //console.log(employee);
+    setDisplayModal(true); // Affichage de la modale
+    setEmployees((current) => [...current, employee]); // On push au tableau le nouvel employé afin de ne pouvoir obtenir une liste d'employés.
+    console.log(employees);
+    dispatch(storeUser(employees));
+    //localStorage.setItem("employees", JSON.stringify(employees)); // This line is still here if you prefer to store the users in localStorage instead of the redux store.
 
     //form.reset();
   };
