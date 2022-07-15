@@ -285,15 +285,12 @@ function NewEmployeePage() {
   const [startDateField, setStartDateField] = useState(new Date());
   const [displayModal, setDisplayModal] = useState(false);
 
-  const [employees, setEmployees] = useState(
-    useSelector((state) => state.usersList.value)
-  ); //JSON.parse(localStorage.getItem("employees")) || [];
-
-  //const form = document.getElementById("create-employee");
+  const employees = useSelector((state) => state.usersList.value); //JSON.parse(localStorage.getItem("employees")) || [];
 
   const saveEmployee = (e) => {
     e.preventDefault();
 
+    const form = document.getElementById("create-employee");
     const firstName = document.getElementById("first-name");
     const lastName = document.getElementById("last-name");
     const dateOfBirth = document.getElementById("date-of-birth");
@@ -313,14 +310,14 @@ function NewEmployeePage() {
       state: stateSelection,
       zipCode: zipCode.value,
     };
-    //console.log(employee);
-    setDisplayModal(true); // Affichage de la modale
-    setEmployees((current) => [...current, employee]); // On push au tableau le nouvel employé afin de ne pouvoir obtenir une liste d'employés.
-    console.log(employees);
-    dispatch(storeUser(employees));
-    //localStorage.setItem("employees", JSON.stringify(employees)); // This line is still here if you prefer to store the users in localStorage instead of the redux store.
 
-    //form.reset();
+    form.reset();
+
+    setDisplayModal(true); // Affichage de la modale
+
+    dispatch(storeUser([...employees, employee]));
+    console.log(employees);
+    //localStorage.setItem("employees", JSON.stringify(employees)); // This line is still here if you prefer to store the users in localStorage instead of the redux store.
   };
 
   const changeStateSelection = (e) => {
