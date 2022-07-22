@@ -403,7 +403,6 @@ function NewEmployeePage() {
       {/* The available props are 
       "title" for the modal header, 
       "body" for the modal body 
-      "closeButton" for the modal close button (can be a "X" or any other text you want) 
       "showModal" for the state used to display the modal,*
       "titleColor" for the title color, 
       "headerBackgroundColor" for the header background color 
@@ -413,7 +412,6 @@ function NewEmployeePage() {
         <Modal
           title="Employee Created!"
           body="New employee created, you may now proceed to the employees list page"
-          closeButton="X"
           showModal={setDisplayModal}
         />
       )}
