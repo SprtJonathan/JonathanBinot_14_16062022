@@ -66,9 +66,6 @@ function EmployeesList() {
     }
   }, [employees, setEmployeesFiltered]);
 
-  const resetStore = () => {
-    localStorage.removeItem("employees");
-  };
   function handleSearchbarChange(event) {
     if (event.target.value === "") {
       return setEmployeesFiltered(employees);
@@ -128,13 +125,6 @@ function EmployeesList() {
         <Link to="/" className="submit-button">
           Home
         </Link>
-      </div>
-
-      {/*   Button used for testing purposes */}
-      <div className="button-container">
-        <button onClick={resetStore} className="submit-button">
-          Clear Local Storage
-        </button>
       </div>
     </div>
   );
