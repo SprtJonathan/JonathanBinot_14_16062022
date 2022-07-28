@@ -70,7 +70,7 @@ function EmployeesList() {
     if (event.target.value === "") {
       return setEmployeesFiltered(employees);
     }
-    console.log(event.target.value === employees[0].firstName);
+    // console.log(event.target.value === employees[0].firstName);
     return setEmployeesFiltered(
       employees.filter(
         (employee) =>

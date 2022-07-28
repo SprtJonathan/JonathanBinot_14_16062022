@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# HRnet : PROJECT 14 Frontend Developer, OPENCLASSROOMS course
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Convert a jQuery library to React
 
-## Available Scripts
+## Dependencies
 
-In the project directory, you can run:
+- The use of Visual Studio Code is recommended
 
-### `npm start`
+- @reduxjs/toolkit v1.8.3
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- react v18.2.0
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- react-data-table-component v7.5.2
 
-### `npm test`
+- react-datepicker v4.8.0
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- react-dom v18.2.0
 
-### `npm run build`
+- react-modal-component-hrnet v1.1.2
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- react-redux v8.0.2
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- react-router-dom v6.3.0
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- react-scripts v5.0.1
 
-### `npm run eject`
+- react-select v5.3.2
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- redux v4.2.0
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- styled-components v5.3.5
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- web-vitals v2.1.4
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Installation instructions
 
-## Learn More
+In order to run this project, please follow the steps below.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Clone the repository on your computer
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Open the main folder with VSCode
 
-### Code Splitting
+3. Open a terminal in Visual Studio Code
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   There are two possibilities : Run the built project or the development environment.
 
-### Analyzing the Bundle Size
+   # To run the build project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   - Type the following commands :`serve -s build`
 
-### Making a Progressive Web App
+   # To run the dev environment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   - Type the following commands :`npm install` to install all of the dependencies
+   - Once all of the dependencies are installed, type the following command : `npm start` and wait for the message "You can now view hrnet2.0 in the browser." to display
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4. The React app should display properly on your browser following this link : `http://localhost:3001/`
